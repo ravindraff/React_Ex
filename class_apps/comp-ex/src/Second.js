@@ -13,6 +13,15 @@ function Second(){
             <Button href="#text-buttons" color="primary">
             Link
             </Button>
+            <br /><br />
+
+            <Button variant="contained">Fisrt</Button>
+            <Button color="primary" variant="contained">primary</Button>
+            <Button color="secondary" variant="contained">secondary</Button>
+            <Button color="danger" variant="contained">danger</Button>
+            <Button disabled>disabled</Button>
+            
+            <br /><br />
             <ButtonGroup>
                 <Button color="primary">primary</Button>
                 <Button color="secondary">secondary</Button>

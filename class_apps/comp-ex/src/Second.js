@@ -63,6 +63,34 @@ function Second(){
                     endIcon={<HomeIcon />}>
                 Home
             </Button>
+            <br></br><br></br>
+            <ButtonGroup variant="">
+                <Button>ReactJs</Button>
+                <Button>ReactNative</Button>
+                <Button>ReactBootstrap</Button>
+                <Button>PrimeReact</Button>
+            </ButtonGroup>
+            <br></br><br></br>
+            <ButtonGroup variant="outlined" size="small">
+                <Button>ReactJs</Button>
+                <Button>ReactNative</Button>
+                <Button>ReactBootstrap</Button>
+                <Button>PrimeReact</Button>
+            </ButtonGroup>
+            <br></br><br></br>
+            <ButtonGroup variant="contained" size="medium" color="secondary">
+                <Button>ReactJs</Button>
+                <Button>ReactNative</Button>
+                <Button>ReactBootstrap</Button>
+                <Button>PrimeReact</Button>
+            </ButtonGroup>
+            <br></br><br></br>
+            <ButtonGroup variant="text" size="medium" color="primary">
+                <Button>ReactJs</Button>
+                <Button>ReactNative</Button>
+                <Button>ReactBootstrap</Button>
+                <Button>PrimeReact</Button>
+            </ButtonGroup>
         </Fragment>
 
     )

@@ -30,36 +30,33 @@ const StyledTableCell = withStyles((theme) => ({
 export default function Second(props) {
     const classes = useStyles();
     const {key1} = props;
-  return (
-    <React.Fragment>
-        <Paper className={classes.root}>
-            <TableContainer>
-                <Table>
-                    <StyledTableRow>
+    return (
+        <React.Fragment>
+            <Paper className={classes.root}>
+                <TableContainer>
+                    <Table>
                         <TableHead>
-                            <StyledTableCell>SNO</StyledTableCell>
-                            <StyledTableCell>PID</StyledTableCell>
-                            <StyledTableCell>PName</StyledTableCell>
-                            <StyledTableCell>PCost</StyledTableCell>
+                            <StyledTableRow>
+                                <StyledTableCell>SNO</StyledTableCell>
+                                <StyledTableCell>PID</StyledTableCell>
+                                <StyledTableCell>PName</StyledTableCell>
+                                <StyledTableCell>PCost</StyledTableCell>
+                            </StyledTableRow>
                         </TableHead>
-                    </StyledTableRow>
-                    {key1.map((element,index)=>(
-                        <StyledTableRow>
-                            <TableBody>
-                                <StyledTableCell>{index+1}</StyledTableCell>
-                                <StyledTableCell>{element.p_id}</StyledTableCell>
-                                <StyledTableCell>{element.p_name}</StyledTableCell>
-                                <StyledTableCell>{element.p_cost}</StyledTableCell>
-                                
-                            </TableBody>
-                    </StyledTableRow>
-                    ))}
-                </Table>          
-            </TableContainer>
+                        {key1.map((element,index)=>(
+                            <StyledTableRow>
+                                    <StyledTableCell>{index+1}</StyledTableCell>
+                                    <StyledTableCell>{element.p_id}</StyledTableCell>
+                                    <StyledTableCell>{element.p_name}</StyledTableCell>
+                                    <StyledTableCell>{element.p_cost}</StyledTableCell>
+                            </StyledTableRow>
+                        ))}
+                    </Table>          
+                </TableContainer>
 
-        </Paper>
+            </Paper>
 
-      
-    </React.Fragment>
-  )
+        
+        </React.Fragment>
+    )
 }

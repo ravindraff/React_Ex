@@ -2,7 +2,6 @@ import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import baseUrl from './baseUrl';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { LoadingSpinner } from 'react-loader-spinner';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { TableContainer, Table, TableCell, TableHead, TableRow, TableBody } from '@material-ui/core';
 function App() {

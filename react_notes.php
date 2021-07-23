@@ -44,6 +44,7 @@ Create Lazy load App:
 >create-react-app get-app --template typescript
 >yarn add @material-ui/core @material-ui/icons --save
 >yarn add axios --save
+https://morioh.com/p/a9ec38a35c23
 >yarn add @types/react-lazy-load-image-component --save
 >yarn add react-lazy-load-image-component --save
 
@@ -96,4 +97,15 @@ Get Countries:
 
 
 
+
+Loading indicator:
+======================
+create-react-app get-app --template typescript
+yarn add axios
+yarn add @material-ui/core @material-ui/icons --save
+https://www.basefactor.com/react-how-to-display-a-loading-indicator-on-fetch-calls
+yarn add react-promise-tracker --save
+https://morioh.com/p/a9ec38a35c23
+npm i --save-dev @types/react-lazy-load-image-component
+yarn add react-lazy-load-image-component --save
 

@@ -108,4 +108,4 @@ yarn add react-promise-tracker --save
 https://morioh.com/p/a9ec38a35c23
 npm i --save-dev @types/react-lazy-load-image-component
 yarn add react-lazy-load-image-component --save
-
+yarn add @types/react-lazy-load-image-component

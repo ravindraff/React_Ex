@@ -13,7 +13,7 @@ function App() {
     },(errRes:any)=>{
       console.log(errRes);
     })
-  },[])
+  },[]) 
   return(
     
         <TableContainer>

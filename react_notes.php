@@ -110,3 +110,14 @@ npm i --save-dev @types/react-lazy-load-image-component
 yarn add react-lazy-load-image-component --save
 yarn add @types/react-lazy-load-image-component
 yarn add react-loader-spinner --save
+
+
+mongodb+srv://admin:<password>@cluster0.ary28.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+USER : nodejs_usr
+PWD:admin
+DATABASE: mern-db
+Collection :employees
+mongodb+srv://nodejs_usr:admin@cluster0.6mktf.mongodb.net/nodjs_db?retryWrites=true&w=majority
+to download node modules : 
+npm i express mongodb cors body-parser --save

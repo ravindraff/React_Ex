@@ -32,6 +32,7 @@ git add README.md
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/ravindraff/ReactPractices.git
+https://github.com/ravindraff/React_Ex.git
 git push -u origin main
 
 yarn add @material-ui/core @material-ui/icons --save

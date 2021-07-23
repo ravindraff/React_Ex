@@ -35,7 +35,64 @@ git remote add origin https://github.com/ravindraff/ReactPractices.git
 git push -u origin main
 
 yarn add @material-ui/core @material-ui/icons --save
+lazy load:
+yarn add react-lazy-load-image-component --save
+
+Create Lazy load App:
+===================
+>create-react-app get-app --template typescript
+>yarn add @material-ui/core @material-ui/icons --save
+>yarn add axios --save
+>yarn add @types/react-lazy-load-image-component --save
+>yarn add react-lazy-load-image-component --save
+
+axios:
+    ===========
+    assyncCall:
+    ===================
+    import React from 'react';
+    import axios from 'axios';
+    import urlName from './config';
+
+    function assyncCall():any{
+        return axios.get(urlName)
+    }
+    export default assyncCall;
+
+urlName:
+    ===========
+    config.tsx:
+    =========
+    const urlName: string = "https://restcountries.eu/rest/v2/all";
+    export default urlName;
+
+Get Countries:
+    ===========
+    import { TableBody, TableRow } from '@material-ui/core';
+    import { TableHead } from '@material-ui/core';
+    import { Table, TableContainer ,TableCell, Paper } from '@material-ui/core';
+
+    import React, {useState,useEffect} from 'react';
+    import assyncCall from './assyncCall'
+    const [countries,getCountries] = useState([]);
+    useEffect(()=>{
+        assyncCall()
+        .then((posRes:any)=>{
+           console.log(posRes.data);
+            getCountries(posRes.data);
+        },(err:any)=>{
+            console.log(err);
+        })
+    },[]);
+    useEffect(()=>{
+        
+    },[]);
+    countries.map((element,index)=>(
+
+    ));
 
 
- 
+
+
+
 

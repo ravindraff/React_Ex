@@ -30,11 +30,11 @@ const StyledTableCell = withStyles((theme) => ({
 export default function Second(props) {
     const classes = useStyles();
     const {key1} = props;
-    return (
-        <React.Fragment>
-            <Paper className={classes.root}>
-                <TableContainer>
-                    <Table>
+    return(
+            <React.Fragment>
+                <Paper className={classes.root}>
+                    <TableContainer>
+                        <Table>
                         <TableHead>
                             <StyledTableRow>
                                 <StyledTableCell>SNO</StyledTableCell>
@@ -52,11 +52,8 @@ export default function Second(props) {
                             </StyledTableRow>
                         ))}
                     </Table>          
-                </TableContainer>
-
-            </Paper>
-
-        
-        </React.Fragment>
+                    </TableContainer>
+                </Paper>
+            </React.Fragment>
     )
 }

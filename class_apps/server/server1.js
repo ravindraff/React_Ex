@@ -102,6 +102,21 @@ app.put('/updateEmployee', function (req, res) {
         }
     });
 })
+app.delete('/deleteEmployee', function (req, res){
+    mclient.connect(url,(err, client) => {
+        if (err) throw err;
+        
+        else{
+            let db = client.db(db_name);
+            db.collection(collection_name).deleteOne({"id":req.body.id},(err, result) => {
+                if (err) throw err;
+                else {
+                    res.send({delete:"success"});
+                }
+            })
+        }
+    })
+})
 
 let port = process.env.PORT || 8080;
 app.listen(port, () => {

@@ -3,20 +3,36 @@ import {  MailOutlined, NotificationsOff } from "@material-ui/icons";
 import SettingsPowerIcon from '@material-ui/icons/SettingsPower';
 import SearchIcon from '@material-ui/icons/Search';
 import React from "react";
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=>({
     root:{ 
         background:"white"
+    },
+    searchItem: {
+        opacity:"0.6",
+        padding: `0px ${theme.spacing(1)}px`,
+        fontSize:"0.8rem",
+        width:"300px",
+        border: "1px solid grey",
+        borderRadius:"10px",
+        '&:hover':{
+            backgroundColor:"#f2f2f2"
+        },
+        '& .MuiSvgIcon-root':{
+            marginRight:theme.spacing(1)
+        }
+
+        
     }
-})
+}));
 function Header() {
     const classes = useStyles();
     return(
         <AppBar position="static" className={classes.root}>
             <Toolbar>
-                <Grid container>
+                <Grid container alignItems="center">
                     <Grid item>
-                        <InputBase placeholder="Search Here" 
-                        startAdornment={<SearchIcon />}
+                        <InputBase  className={classes.searchItem} placeholder="Search Here" 
+                        startAdornment={<SearchIcon fontSize={"small"} />}
                         />
                     </Grid>
                     <Grid item sm={true}>

@@ -368,3 +368,19 @@ app.listen(port,()=>{
     store.subscribe(()=>{
         console.log(store.getState());
     })
+
+
+Example:
+============================================
+create-react-app crud-app-thunk --template typescript
+cd crud-app-thunk
+yarn add @material-ui/core --save
+in index.html include this
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+yarn add @material-ui/icons --save
+to change main css => font family to 'Roboto',
+yarn start
+
+
+

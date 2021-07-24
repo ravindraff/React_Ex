@@ -18,13 +18,15 @@ app.use(cors());
 app.use(bodyparser.json());
 
 //read the form data 
-app.use(bodyparser.urlencoded({ extended :false }));
+app.use(bodyparser.urlencoded({
+    extended: false
+}));
 
 
 let password = "admin";
 let db_name = "mern-db";
 let collection_name = "employees";
-let url = 'mongodb+srv://admin:'+password+'@mycluster.zvdho.mongodb.net/'+db_name+'?retryWrites=true&w=majority';
+let url = 'mongodb+srv://admin:' + password + '@mycluster.zvdho.mongodb.net/' + db_name + '?retryWrites=true&w=majority';
 //let db_url ='mongodb+srv://admin:'+password+'@cluster0.ary28.mongodb.net/'+db_name+'?retryWrites=true&w=majority';
 let mclient = mongodb.MongoClient;
 
@@ -48,30 +50,28 @@ app.get('/getproducts', function (req, res) {
 // Create the post request
 app.post('/createEmployee', function (req, res) {
     let obj = {
-        "id":req.body.id,
-        "fullName":req.body.fullName,
-        "email":req.body.email,
-        "mobile":req.body.mobile,
-        "departmentId":req.body.departmentId,
-        "gender":req.body.gender,
-        "hireDate":req.body.hireDate,
+        "id": req.body.id,
+        "fullName": req.body.fullName,
+        "email": req.body.email,
+        "mobile": req.body.mobile,
+        "departmentId": req.body.departmentId,
+        "gender": req.body.gender,
+        "hireDate": req.body.hireDate,
     };
-    mclient.connect(url,(err,client)=>{
-        if(err) throw err;
-        else
-        {
+    mclient.connect(url, (err, client) => {
+        if (err) throw err;
+        else {
             let db = client.db(db_name);
-            db.collection(collection_name).insertOne(obj,(err,result)=>{
-                if(err) throw err;
+            db.collection(collection_name).insertOne(obj, (err, result) => {
+                if (err) throw err;
                 else {
-                    res.send({insert : "success"});
+                    res.send({
+                        insert: "success"
+                    });
                 }
-                
+
             });
         }
-
-
-
     })
 
 })
@@ -80,26 +80,31 @@ app.post('/createEmployee', function (req, res) {
 
 app.put('/updateEmployee', function (req, res) {
     let obj = {
-        "email":req.body.email,
-        "mobile":req.body.mobile,
+        "email": req.body.email,
+        "mobile": req.body.mobile,
     };
-    mclient.connect(url,(err,client) => {
+    mclient.connect(url, (err, client) => {
         if (err) throw err;
-        else{
+        else {
             let db = client.db(db_name);
-            db.collection(collection_name).updateOne({"id":req.body.id},{$set:obj},(err,result) => {
+            db.collection(collection_name).updateOne({
+                "id": req.body.id
+            }, {
+                $set: obj
+            }, (err, result) => {
                 if (err) throw err;
-                else{
-                    res.send({update : "success"})
+                else {
+                    res.send({
+                        update: "success"
+                    })
                 }
-            }
-            )
+            })
         }
     });
 })
 
-let port = process.env.PORT || 8080 ;
-app.listen(port,()=>{
+let port = process.env.PORT || 8080;
+app.listen(port, () => {
     console.log("server started successfully.........");
     console.log(url);
 })

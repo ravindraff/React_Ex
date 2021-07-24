@@ -326,3 +326,9 @@ app.listen(port,()=>{
     console.log("server started successfully.........");
     console.log(url);
 })
+
+
+
+//Create State Management
+===============================
+>yarn add redux --save

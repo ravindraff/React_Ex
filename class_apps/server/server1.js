@@ -123,3 +123,11 @@ app.listen(port, () => {
     console.log("server started successfully.........");
     console.log(url);
 })
+
+//http://localhost:8080/getEmployees=====>(GET)
+
+//http://localhost:8080/createEmployee==>(POST)
+
+//http://localhost:8080/updateEmployee==>(PUT)
+
+//http://localhost:8080/deleteEmployee==>(DELETE)

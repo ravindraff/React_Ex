@@ -332,3 +332,39 @@ app.listen(port,()=>{
 //Create State Management
 ===============================
 >yarn add redux --save
+=>import createStore function in redux
+    const {createStore} = require('redux');
+=>create store using createStore()
+    const store = createStore();
+=>create reducer
+    const reducer = (state,action)=>{};
+=>deploy reducer
+    const store = createStore(reducer);
+=>create initialState
+    const initialState ={}
+=>implement initialState to reducer
+    const reducer = (state=initialState,action)=>{};
+=>create the dispatcher
+    store.dispatch({type:"AGE_UP",value:1})
+    store.dispatch({type:"AGE_DOWN",value:1})
+=>implement the business logic into reducer
+    const reducer=(state=initialState,action)=>{
+        switch(action.type){
+            case "AGE_UP":
+                return{
+                    ...state,
+                    age:state.age + 1
+                }
+                break;
+            case "AGE_DOWN":
+                return{
+                    ...state,
+                    age:state.age - 1
+                }
+        }
+        return state;
+    }
+=>create subscribe
+    store.subscribe(()=>{
+        console.log(store.getState());
+    })

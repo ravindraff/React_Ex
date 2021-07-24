@@ -22,31 +22,32 @@ app.use(bodyparser.urlencoded({ extended :false }));
 
 
 let password = "admin";
-let db_name = "mer-db";
+let db_name = "mern-db";
 let collection_name = "employees";
-let db_url ='mongodb+srv://admin:${password}@cluster0.ary28.mongodb.net/${db_name}?retryWrites=true&w=majority';
+let db_url ='mongodb+srv://admin:'+password+'@cluster0.ary28.mongodb.net/'+db_name+'?retryWrites=true&w=majority';
 let mclient = mongodb.MongoClient;
 
 //create the get request
-app.get('/employees',(req, res) => {    
-    mclient.connect(db_url,(err,client)=>{
-        if(err) throw err;
-        else{
-            let db = client.db(db_name);
-            db.collection(collection_name).find().toArray((err,data)=>{
-                if(err) throw err;
-                else{
-                    res.send(data);
+var url = "mongodb+srv://nodejs_usr:admin@cluster0.6mktf.mongodb.net/nodejs_db?retryWrites=true&w=majority";
+app.get('/getproducts', function (req, res) {
+    mclient.connect(url, function (err, connection) {
+        if (err)
+            throw err;
+        else {
+            var db = connection.db("nodejs_db");
+            db.collection("products").find().toArray(function (err, array) {
+                if (err)
+                    throw err;
+                else {
+                    res.send(array);
                 }
-
-            })
+            });
         }
-
     });
-
 });
 
-let port = process.env.PORT || 8090 ;
+let port = process.env.PORT || 8080 ;
 app.listen(port,()=>{
     console.log("server started successfully.........");
+    console.log(db_url);
 })

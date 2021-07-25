@@ -568,5 +568,8 @@ App.tsx:
     export default SideMenu;
 
 yarn add axios @types/axios --save
+yarn add redux @types/redux --save
+yarn add redux-thunk @types/redux-thunk --save
+yarn add axios @types/axios redux @types/redux redux-thunk @types/redux-thunk --save
 
 

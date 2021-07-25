@@ -11,7 +11,7 @@ export const getEmployees =()=>{
     }
 }
 export const employees =(records:any)=>{
-    return {type:"fetch",value:records}
+    return {type:"FETCH",value:records}
 }
 /*----------------------------------------------------------------------*/
 /*------------------------------ADD-------------------------------------*/

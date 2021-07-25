@@ -5,7 +5,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import React from "react";
 const useStyles = makeStyles(theme=>({
     root:{ 
-        background:"white"
+        background:"white",
+        transform:"translateZ(0)"
     },
     searchItem: {
         opacity:"0.6",

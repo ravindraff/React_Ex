@@ -1,8 +1,10 @@
 import React from 'react';
 import Header from '../components/Header';
 import SideMenu from '../components/SideMenu';
+import PageHeader from '../components/PageHeader';
 import './App.css';
 import {createMuiTheme, makeStyles, ThemeProvider} from '@material-ui/core';
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
 const useStyles = makeStyles({
   appMain: {
    paddingLeft:"320px",
@@ -23,7 +25,12 @@ function App() {
       <SideMenu />
       <div className={classes.appMain }>
         <Header />
+        <PageHeader 
+          title="EMS" 
+          subtitle='Add Employee' 
+          icon={<GroupAddIcon />} />
       </div>
+
       </ThemeProvider>  
   );
 }

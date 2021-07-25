@@ -382,5 +382,191 @@ yarn add @material-ui/icons --save
 to change main css => font family to 'Roboto',
 yarn start
 
+create components folder
+=======================
+App.tsx:
+==========
+    import React from 'react';
+    import Header from '../components/Header';
+    import SideMenu from '../components/SideMenu';
+    import PageHeader from '../components/PageHeader';
+    import './App.css';
+    import {createMuiTheme, makeStyles, ThemeProvider} from '@material-ui/core';
+    import GroupAddIcon from '@material-ui/icons/GroupAdd';
+    const useStyles = makeStyles({
+    appMain: {
+    paddingLeft:"320px",
+    //width:"100%"
+    }
+    })
+    const customTheme = createMuiTheme({
+    palette:{ 
+        primary:{
+        main : "#FF0000"
+        }
+    }
+    })
+    function App() {
+    const classes = useStyles();
+    return (
+        <ThemeProvider theme={customTheme}>
+        <SideMenu />
+        <div className={classes.appMain }>
+            <Header />
+            <PageHeader 
+            title="Employee Management System" 
+            subtitle='Add Employee' 
+            icon={<GroupAddIcon />} />
+        </div>
+
+        </ThemeProvider>  
+    );
+    }
+
+    export default App;
+
+1.Header file
+================
+    import { AppBar, Badge, Grid, IconButton, InputBase, Toolbar ,makeStyles} from "@material-ui/core";
+    import {  MailOutlined, NotificationsOff } from "@material-ui/icons";
+    import SettingsPowerIcon from '@material-ui/icons/SettingsPower';
+    import SearchIcon from '@material-ui/icons/Search';
+    import React from "react";
+    const useStyles = makeStyles(theme=>({
+        root:{ 
+            background:"white",
+            transform:"translateZ(0)"
+        },
+        searchItem: {
+            opacity:"0.6",
+            padding: `0px ${theme.spacing(1)}px`,
+            fontSize:"0.8rem",
+            width:"300px",
+            border: "1px solid grey",
+            borderRadius:"10px",
+            '&:hover':{
+                backgroundColor:"#f2f2f2"
+            },
+            '& .MuiSvgIcon-root':{
+                marginRight:theme.spacing(1)
+            }
+
+            
+        }
+    }));
+    function Header() {
+        const classes = useStyles();
+        return(
+            <AppBar position="static" className={classes.root}>
+                <Toolbar>
+                    <Grid container alignItems="center">
+                        <Grid item>
+                            <InputBase  className={classes.searchItem} placeholder="Search Here" 
+                            startAdornment={<SearchIcon fontSize={"small"} />}
+                            />
+                        </Grid>
+                        <Grid item sm={true}>
+                        </Grid>
+                        <Grid item>
+                            <IconButton>
+                            <Badge badgeContent={4} color="secondary">
+                                <NotificationsOff />
+                            </Badge>
+                            </IconButton>
+                            <IconButton>
+                            <Badge badgeContent={4} color="secondary">
+                                <MailOutlined />
+                            </Badge>
+                            </IconButton>
+                            <IconButton>
+                            <Badge color="secondary">
+                                <SettingsPowerIcon />
+                            </Badge>
+                            </IconButton>
+
+                        </Grid>
+
+                    </Grid>
+                </Toolbar>
+            </AppBar>
+        )
+    }
+    export default Header;
+2.Page header file
+===========================
+    import React from "react";
+    import {makeStyles, Paper, Card, Typography} from '@material-ui/core';
+    const useStyles = makeStyles(theme=>({
+        root: {
+            backgroundColor:"#fdfdff",
+            
+        },
+        PageHeader: {
+            padding:theme.spacing(4),
+            display: "flex",
+            marginBottom:theme.spacing(2)
+        },
+        PageIcon: {
+            display:'inline-block',
+            padding:theme.spacing(2)
+        },
+        PageTitle: {
+            paddingLeft:theme.spacing(2),
+            '& .MuiTypography-subtitle2':{
+                opacity:'0.6',
+                marginTop:theme.spacing(1)
+            }
+
+        }
+    }))
+    function PageHeader(props:any){
+        const classes = useStyles();
+        const {title,subtitle,icon} = props
+        return(
+            <div>
+                <Paper elevation={0} className={classes.root}>
+                    <div className={classes.PageHeader}>
+                        <Card className={classes.PageIcon}>
+                            {icon}
+                        </Card>
+                        <div className={classes.PageTitle}>
+                            <Typography variant="h6" component="div">{title}</Typography>
+                            <Typography variant="subtitle2" component="div">{subtitle}</Typography>
+                        </div>
+                    </div>
+                </Paper>
+            </div>
+        )
+        
+    }
+    export default PageHeader;
+3.Side Menu file
+======================================
+    import React from "react";
+    import { makeStyles } from '@material-ui/core';
+    const useStyles = makeStyles({
+        SideMenu:{ 
+            display:"flex",
+            flexDirection:"column",
+            width:"320px",
+            height:"100%",
+            position:"absolute",
+            left:"0px",
+            //backgroundColor:"linear-gradient(#e66465, #9198e5)",
+            background: 'linear-gradient(to right bottom, #430089, #82ffa1)',
+
+        }
+    })
+
+    function SideMenu() {
+        const classes = useStyles();
+        return(
+            <div className={classes.SideMenu}>
+            </div>
+        )
+    }
+    export default SideMenu;
+
+yarn add axios @types/axios --save
 
 

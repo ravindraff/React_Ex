@@ -32,7 +32,7 @@ let mclient = mongodb.MongoClient;
 
 //create the get request
 //var url = "mongodb+srv://nodejs_usr:admin@cluster0.6mktf.mongodb.net/nodejs_db?retryWrites=true&w=majority";
-app.get('/getproducts', function (req, res) {
+app.get('/getEmployees', function (req, res) {
     mclient.connect(url, function (err, connection) {
         if (err) throw err;
         else {

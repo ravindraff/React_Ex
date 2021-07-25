@@ -8,7 +8,7 @@ import GroupAddIcon from '@material-ui/icons/GroupAdd';
 const useStyles = makeStyles({
   appMain: {
    paddingLeft:"320px",
-   width:"100%"
+   //width:"100%"
   }
 })
 const customTheme = createMuiTheme({
@@ -26,7 +26,7 @@ function App() {
       <div className={classes.appMain }>
         <Header />
         <PageHeader 
-          title="EMS" 
+          title="Employee Management System" 
           subtitle='Add Employee' 
           icon={<GroupAddIcon />} />
       </div>

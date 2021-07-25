@@ -569,6 +569,7 @@ App.tsx:
 
 yarn add axios @types/axios --save
 yarn add redux @types/redux --save
+yarn add react-redux @types/react-redux --save
 yarn add redux-thunk @types/redux-thunk --save
 yarn add axios @types/axios redux @types/redux redux-thunk @types/redux-thunk --save
 
@@ -659,3 +660,17 @@ create reducer file
         }
     }
     export default reducer;
+
+
+    ==========================
+
+    in index.tsx:
+    ================
+    import {createStore , applyMiddleware} from 'redux';
+    import { Provider } from 'react-redux';
+    import reducer from './reducers/reducer'
+    import thunk from 'redux-thunk';
+    const store = createStore(reducer,applyMiddleware(thunk));
+    <Provider store={store}>
+    <App />
+    </Provider>,

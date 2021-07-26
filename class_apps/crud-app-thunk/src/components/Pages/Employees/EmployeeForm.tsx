@@ -10,7 +10,8 @@ const initialFValue:any={
     email : "",
     city :"",
     mobile : "",
-    departmentId:""
+    departmentId:"",
+    hireDate:new Date(),
 }
 const genderItems:any=[
     {id: "male",title: "Male"},
@@ -44,7 +45,7 @@ export default function EmployeeForm():any{
 
         if("departmentId" in fieldValues)
             temp.departmentId = fieldValues.departmentId?"":"department Id is Required";
-            
+
         setErrors({...temp});
 
     }
@@ -94,6 +95,12 @@ export default function EmployeeForm():any{
                         onChange={handleInputChange}
                         error ={errors.departmentId}
                         items={selectItems}
+                    />
+                    <Controls.DatePicker
+                        name="hireDate"
+                        label="Hired Date"
+                        values ={values.hireDate}
+                        onChange={handleInputChange}
                     />
                
                 </Grid>

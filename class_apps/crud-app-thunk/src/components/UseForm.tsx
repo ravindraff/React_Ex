@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 export default function useForm(initialFValue:any,validateOnChange:boolean=false,validate:any){
     const [values,setValues] = useState(initialFValue);
-    const [errors,setErrors] = useState({fullName:"",id:""});
+    const [errors,setErrors] = useState({fullName:"",id:"",email:"",city:"",});
     const handleInputChange:any =(event:any):any=>{
         const {name,value} = event.target;
         setValues({
@@ -14,7 +14,7 @@ export default function useForm(initialFValue:any,validateOnChange:boolean=false
     }
     const resetForm:any =(event:any):any=>{
         setValues(initialFValue);
-        setErrors({fullName:"",id:""});
+        setErrors({fullName:"",id:"",email:"",city:""});
     }
     return{
         values,

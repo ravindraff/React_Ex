@@ -6,7 +6,9 @@ import Form from "../../Form";
 import useForm from "../../useForm";
 const initialFValue:any={
     fullName : "",
-    id:0
+    id:0,
+    email : "",
+    city :""
 }
 
 export default function EmployeeForm():any{
@@ -16,6 +18,10 @@ export default function EmployeeForm():any{
             temp.fullName = fieldValues.fullName?"":"fullName is Required";
         if("id" in fieldValues)
             temp.id = fieldValues.id?"":"Id is Required";
+        if("email" in fieldValues)
+            temp.email = fieldValues.email?"":"email is Required";
+        if("city" in fieldValues)
+            temp.city = fieldValues.city?"":"city is Required";
         setErrors({...temp});
 
     }
@@ -37,6 +43,30 @@ export default function EmployeeForm():any{
                     label="full Name"
                     value={values.fullName}
                     error={errors.fullName}
+                    onChange={handleInputChange}
+
+                    />
+                    <Controls.Input 
+                    name="email"
+                    label="Email"
+                    value={values.email}
+                    error={errors.email}
+                    onChange={handleInputChange}
+
+                    />
+                    <Controls.Input 
+                    name="city"
+                    label="City"
+                    value={values.city}
+                    error={errors.city}
+                    onChange={handleInputChange}
+
+                    />
+                    <Controls.Input 
+                    name="Id"
+                    label="Id"
+                    value={values.id}
+                    error={errors.id}
                     onChange={handleInputChange}
 
                     />

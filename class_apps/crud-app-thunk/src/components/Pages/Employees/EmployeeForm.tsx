@@ -6,7 +6,7 @@ import Form from "../../Form";
 import useForm from "../../useForm";
 const initialFValue:any={
     fullName : "",
-    id:0,
+    id:"",
     email : "",
     city :""
 }
@@ -30,49 +30,46 @@ export default function EmployeeForm():any{
         <Form>
             <Grid container>
                 <Grid item xs={6}>
-                    <Controls.Input 
-                    name="Id"
-                    label="Id"
-                    value={values.id}
-                    error={errors.id}
-                    onChange={handleInputChange}
-
-                    />
+                    
                     <Controls.Input 
                     name="fullName"
                     label="full Name"
                     value={values.fullName}
                     error={errors.fullName}
-                    onChange={handleInputChange}
-
-                    />
+                    onChange={handleInputChange}/>
                     <Controls.Input 
                     name="email"
                     label="Email"
                     value={values.email}
                     error={errors.email}
-                    onChange={handleInputChange}
-
-                    />
+                    onChange={handleInputChange}/>
                     <Controls.Input 
                     name="city"
                     label="City"
                     value={values.city}
                     error={errors.city}
-                    onChange={handleInputChange}
-
-                    />
-                    <Controls.Input 
-                    name="Id"
-                    label="Id"
-                    value={values.id}
-                    error={errors.id}
-                    onChange={handleInputChange}
-
-                    />
+                    onChange={handleInputChange}/>
+                   
                 </Grid>
                 <Grid item xs={6}>
-
+                <Controls.Input 
+                    name="fullName"
+                    label="full Name"
+                    value={values.fullName}
+                    error={errors.fullName}
+                    onChange={handleInputChange}/>
+                    <Controls.Input 
+                    name="email"
+                    label="Email"
+                    value={values.email}
+                    error={errors.email}
+                    onChange={handleInputChange}/>
+                    <Controls.Input 
+                    name="city"
+                    label="City"
+                    value={values.city}
+                    error={errors.city}
+                    onChange={handleInputChange}/>
                 </Grid>
             </Grid>
 

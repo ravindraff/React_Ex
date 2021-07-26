@@ -5,6 +5,7 @@ import PageHeader from '../components/PageHeader';
 import './App.css';
 import {createMuiTheme, makeStyles, ThemeProvider} from '@material-ui/core';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
+import Employee from '../components/Pages/Employees/Employee';
 const useStyles = makeStyles({
   appMain: {
    paddingLeft:"320px",
@@ -25,10 +26,8 @@ function App() {
       <SideMenu />
       <div className={classes.appMain }>
         <Header />
-        <PageHeader 
-          title="Employee Management System" 
-          subtitle='Add Employee' 
-          icon={<GroupAddIcon />} />
+        <Employee />
+       
       </div>
 
       </ThemeProvider>  

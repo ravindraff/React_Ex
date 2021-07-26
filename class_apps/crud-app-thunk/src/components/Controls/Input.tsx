@@ -6,6 +6,7 @@ export default function Input(props:any):any {
     return(
         <TextField variant="outlined"
                     name={name} 
+                    value ={value}
                     label={label}
                     onChange={onChange}
                     {...(error && {error:true,helperText:error})}                />

@@ -1,0 +1,63 @@
+1) introduction to javascript
+
+2) variables
+
+3) functions
+      
+      => named functions
+
+      => anonymous functions / arrow functions / lamda functions / nameless functions / callback functions
+
+      => rest parameters in functions
+
+      => optional parameters in functions
+
+      => default parameters in functions
+
+      => IIFE (Immidiate Invokable Functional Expression)
+
+      => Generators
+
+4) json
+
+    => json server
+
+    => rest api's
+
+    => Postman
+
+
+5) arrays 
+
+        50+ methods
+
+
+6) promises
+
+        async & await
+
+
+7) callbacks
+
+        callback hell
+
+
+8) debouncing
+
+
+9) throttling
+
+
+10) regular expressions
+
+
+11) call()   apply()   and bind()
+
+
+12) currying
+
+
+13) Event Bubbling & Event Capturing
+
+
+14) DOM Manipulations

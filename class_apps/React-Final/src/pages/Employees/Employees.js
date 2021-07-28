@@ -1,5 +1,5 @@
 import React, {
-    useState
+    useState,useEffect
 } from 'react'
 import EmployeeForm from "./EmployeeForm";
 import PageHeader from "../../components/PageHeader";
@@ -25,7 +25,7 @@ import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import CloseIcon from '@material-ui/icons/Close';
 import Notification from "../../components/Notification";
 import ConfirmDialog from "../../components/ConfirmDialog";
-import actions from '../../Actions/actions';
+/* import actions from '../../Actions/actions'; */
 import {
     useSelector
 } from 'react-redux';
@@ -96,11 +96,11 @@ export default function Employees() {
     })
 
 
-    const reco = useSelector(state => state.state);
-    const dispatch = useDispatch();
+    /* const reco = useSelector(state => state.state);
+    const dispatch = useDispatch(); */
 
     useEffect(() => {
-        dispatch(actions.getAllEmployees);
+       /*  dispatch(actions.getAllEmployees); */
     }, [])
 
     const {
@@ -108,7 +108,7 @@ export default function Employees() {
         TblHead,
         TblPagination,
         recordsAfterPagingAndSorting
-    } = useTable(reco.records, headCells, filterFn);
+    } = useTable(records=[], headCells, filterFn);
 
     const handleSearch = e => {
         let target = e.target;

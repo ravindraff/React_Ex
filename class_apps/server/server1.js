@@ -94,7 +94,7 @@ app.put('/updateEmployee', function (req, res) {
             }, (err, result) => {
                 if (err) throw err;
                 else {
-                    res.send({
+                    res.send({  
                         update: "success"
                     })
                 }

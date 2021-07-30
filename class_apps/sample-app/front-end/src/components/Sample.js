@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 //import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
-import { Paper, makeStyles, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from '@material-ui/core';
+import { Paper, makeStyles,TableContainer,Table,TableHead, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from '@material-ui/core';
 import Controls from "../components/controls/Controls";
 import { Search } from "@material-ui/icons";
 import AddIcon from '@material-ui/icons/Add';
@@ -10,8 +10,22 @@ import CloseIcon from '@material-ui/icons/Close';
 import Notification from "../components/Notification";
 import ConfirmDialog from "../components/ConfirmDialog"; */
 
-import axios from 'axios';
+const useStyles = makeStyles(theme => ({
+    pageContent: {
+        margin: theme.spacing(5),
+        padding: theme.spacing(3)
+    },
+    searchInput: {
+        width: '75%'
+    },
+    newButton: {
+        position: 'absolute',
+        right: '10px'
+    }
+}))
+
 function Sample() {
+    const classes =useStyles();
     const[records,setRecords] = useState([]);
     useEffect(() => {
       getData();
@@ -32,14 +46,14 @@ function Sample() {
                                 <Search />
                             </InputAdornment>)
                         }}
-                        onChange={handleSearch}
+                       // onChange={handleSearch}
                     />
                     <Controls.Button
                         text="Add New"
                         variant="outlined"
                         startIcon={<AddIcon />}
                         className={classes.newButton}
-                        onClick={() => { setOpenPopup(true); setRecordForEdit(null); }}
+                        //onClick={() => { setOpenPopup(true); setRecordForEdit(null); }}
                     />
                 </Toolbar>
       <TableContainer>

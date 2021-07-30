@@ -23,7 +23,7 @@ const initialFValues = {
     isPermanent: false,
 }
 
-export default function EmployeeForm(props) {
+export default function ProductForm(props) {
     const { addOrEdit, recordForEdit } = props
 
     const validate = (fieldValues = values) => {
@@ -79,15 +79,15 @@ export default function EmployeeForm(props) {
                         error={errors.fullName}
                     />
                     <Controls.Input
-                        label="Email"
-                        name="email"
+                        label="pEmail"
+                        name="pemail"
                         value={values.email}
                         onChange={handleInputChange}
                         error={errors.email}
                     />
                     <Controls.Input
-                        label="Mobile"
-                        name="mobile"
+                        label="pMobile"
+                        name="pmobile"
                         value={values.mobile}
                         onChange={handleInputChange}
                         error={errors.mobile}
@@ -108,14 +108,7 @@ export default function EmployeeForm(props) {
                         onChange={handleInputChange}
                         items={genderItems}
                     />
-                    <Controls.Select
-                        name="departmentId"
-                        label="Department"
-                        value={values.departmentId}
-                        onChange={handleInputChange}
-                        options={employeeService.getDepartmentCollection()}
-                        error={errors.departmentId}
-                    />
+                   
                    {/*  <Controls.DatePicker
                         name="hireDate"
                         label="Hire Date"
